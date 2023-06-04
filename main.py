@@ -45,11 +45,12 @@ if (len(c)): # If file exists and has contents
 
 
     # Get functions
-    fi=0 # Function Id Index
+    fi=-1 # Function Id Index
     while (l<len(c) and "/*" in c[l:]):
+        fi += 1
         while (c[l].strip() != "/*"): l+=1
         l+=1
-        fMainDesc = f"<a name=\"{functionIds[fi]}\"></a>{c[l].strip()}" # Function descriptor (the 'title')
+        fMainDesc = c[l].strip() # Function descriptor (the 'title')
         l+=2
 
         
@@ -59,11 +60,53 @@ if (len(c)): # If file exists and has contents
             l+=1
 
 
+        fType = c[l].strip()[:-2]
         fParameters = "\n\n### " + c[l].strip()[:-1] + "\n" # Function parameter list
-        fParameters += "| " + c[l].strip()[:-1] + " | Description |\n|:---:|---|\n"
+        fParameters += "| " + fType + " | Description | Notes |\n|:---:|---|---|\n"
         l+=1
+        while (c[l].strip() != ""):
+            tParam = c[l].split("=")
+            fParameters += "| <a name=\"" + functionIds[fi] + "\"></a>" + tParam[0].strip() + " | " + tParam[-1].strip() + " | "
+            l+=1
+            #print("c[l][:2] [" + c[l].strip() + "] " + str(c[l][:2] == "\t\t"))
+            while (c[l][:3] == "\t\t\t"):
+                fParameters += f"{c[l].strip()}<br>"
+                l+=1
+            fParameters += " |\n"
+
+
+        fRet = ""
+        if (fType == "Parameter"): # Function
+            l+=1
+            if (c[l].strip() == "No return value"):
+                fRet = "\n**Returns:** Nothing\n"
+            else:
+                fRet = "\n**Returns:** `" + " ".join(c[l].strip().split(" ")[2:]) + "`\n"
+        l+=1
+
+
+
+        fExtra = "\n#### Extra Info:\n"
+        if (c[l].strip() != "*/"):
+            if (c[l].strip() != ""):
+                fExtra += c[l].strip() + "\\\n"
+            l+=1
         
-    out += "<a name=\"test\"></a>Test"
+        while (c[l].strip() != "*/"):
+            fExtra += c[l].strip() + "\\\n"
+            l+=1
+
+        if (fExtra[:-2] == "\n#### Extra Info:"):
+            fExtra = "\n#### Extra Info:\n**None**\n\n"
+        else:
+            fExtra = fExtra[:-2] + "\n\n"
+
+
+        l+=1
+        fTitle = " ".join(c[l].strip()[:-1].split(" ")[1:])
+
+        out += f"## <a name=\"{functionIds[fi]}\"></a>`{fTitle}`\n"
+        out += f"**{fMainDesc}**\n\n{fDesc}\n{fParameters}\n{fRet}\n{fExtra}\n\n"
 
 
 

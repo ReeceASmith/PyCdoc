@@ -34,6 +34,7 @@
 	
 	Attributes:
 		char *value	= Pointer to string containing integer value
+	
 */
 typedef struct Integer {
 	char *value;
