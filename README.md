@@ -212,3 +212,9 @@ This is some example optional information
 ---
 **All example code is included in the "examples" folder, along with their markdown files.\
 The markdown files have not been edited**
+
+## Output
+If the input header file is of the correct format and only includes supported syntax, PyCdoc will output a single markdown file.\
+PyCdoc is very simple and currently has a very limited error-checking system, meaning it may not always work correctly, if at all, when it encounters unexpected file contents.
+
+In the output file, a table at the top of the displayed markdown page displays every function name and description in the file. Clicking on the function name in the table will scroll the page to that function's section in the file.
