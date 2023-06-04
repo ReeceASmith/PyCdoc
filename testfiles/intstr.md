@@ -24,12 +24,10 @@ All references to an "integer" or "integer-string" in this file refer to a Cint 
 | [CintInc](#CintInc-23) | Increments a Cint Integer |
 | [CintDec](#CintDec-24) | Decrements a Cint Integer |
 
-## <a name="struct-Integer-9"></a>`struct Integer `
+## <a name="struct-Integer-9"></a>`struct Integer`
 **Integer object to make working with Cint Integers easier**
 
-Will be referred to as just an "Integer"\
-\
-
+Will be referred to as just an "Integer"
 
 
 ### Attributes
@@ -46,9 +44,7 @@ Will be referred to as just an "Integer"\
 ## <a name="integer-10"></a>`integer(char * const s)`
 **Integer Constructor**
 
-Takes in a string and converts it to an Integer object using pairing (compression)\
-\
-
+Takes in a string and converts it to an Integer object using pairing (compression)
 
 
 ### Parameters
@@ -68,9 +64,7 @@ Does not (yet) check if it successfully allocates the requested memory. (May cra
 ## <a name="freeCint-11"></a>`Cintcpy(const Integer c)`
 **Integer Copy Constructor**
 
-Takes in an Integer and creates a copy of it.\
-\
-
+Takes in an Integer and creates a copy of it.
 
 
 ### Parameters
@@ -90,9 +84,7 @@ Does not (yet) check if it successfully allocates the requested memory. (May cra
 ## <a name="printCint-12"></a>`freeCint(Integer *c)`
 **Integer Destructor**
 
-Takes in an Integer and frees up its memory\
-\
-
+Takes in an Integer and frees up its memory
 
 
 ### Parameters
@@ -111,9 +103,7 @@ Takes in an Integer and frees up its memory\
 ## <a name="getCint-13"></a>`printCint(const Integer c)`
 **Print Cint Integer**
 
-Takes in an Integer and prints it to the screen by decompressing it in chunks\
-\
-
+Takes in an Integer and prints it to the screen by decompressing it in chunks
 
 
 ### Parameters
@@ -145,9 +135,7 @@ Integer getCint();\
 /*\
 Get number of digits in Cint Integer\
 \
-Takes in an Integer and returns its length (the number of digits in the Integer)\
-\
-
+Takes in an Integer and returns its length (the number of digits in the Integer)
 
 
 ### Parameters
@@ -166,9 +154,7 @@ Takes in an Integer and returns its length (the number of digits in the Integer)
 ## <a name="Cintsize-15"></a>`long long Cintsize(const Integer c)`
 **Get size of Cint Integer (in bytes)**
 
-Takes in an Integer and returns its size in memory (in bytes)\
-\
-
+Takes in an Integer and returns its size in memory (in bytes)
 
 
 ### Parameters
@@ -187,9 +173,7 @@ Takes in an Integer and returns its size in memory (in bytes)\
 ## <a name="CintCat-16"></a>`CintCat(const Integer a, const Integer b)`
 **Concatenates two Cint Integers**
 
-Takes in two Integers and returns a single Integer with the inputs concatenated together\
-\
-
+Takes in two Integers and returns a single Integer with the inputs concatenated together
 
 
 ### Parameters
@@ -209,9 +193,7 @@ Takes in two Integers and returns a single Integer with the inputs concatenated 
 ## <a name="subCint-17"></a>`subCint(const Integer c, const unsigned long long s, const unsigned long long e)`
 **Gets a portion of a Cint Integer**
 
-Takes in an Integer, and two unsigned long longs and returns a portion of the input Integer\
-\
-
+Takes in an Integer, and two unsigned long longs and returns a portion of the input Integer
 
 
 ### Parameters
@@ -232,9 +214,7 @@ Takes in an Integer, and two unsigned long longs and returns a portion of the in
 ## <a name="CintAdd-18"></a>`CintAdd(const Integer a, const Integer b)`
 **Add two Cint Integers**
 
-Takes in two Integers and adds them together, since adding two Integer structs with C will not work\
-\
-
+Takes in two Integers and adds them together, since adding two Integer structs with C will not work
 
 
 ### Parameters
@@ -254,9 +234,7 @@ Takes in two Integers and adds them together, since adding two Integer structs w
 ## <a name="CintSub-19"></a>`CintSub(const Integer a, const Integer b)`
 **Subtract one Cint Integer from another**
 
-Takes in two Integers and subtracts one from the other, since subtracting two Integer structs with C will not work\
-\
-
+Takes in two Integers and subtracts one from the other, since subtracting two Integer structs with C will not work
 
 
 ### Parameters
@@ -276,9 +254,7 @@ Takes in two Integers and subtracts one from the other, since subtracting two In
 ## <a name="CintMul-20"></a>`CintMul(const Integer a, const Integer b)`
 **Multiply two Cint Integers**
 
-Takes in two Integers and multiplies them together, since multiplying two Integer structs with C will not work\
-\
-
+Takes in two Integers and multiplies them together, since multiplying two Integer structs with C will not work
 
 
 ### Parameters
@@ -298,9 +274,7 @@ Takes in two Integers and multiplies them together, since multiplying two Intege
 ## <a name="CintDiv-21"></a>`CintDiv(const Integer a, const Integer b)`
 **Divide a Cint Integer by another**
 
-Takes in two Integers and divides one by the other, since dividing two Integer structs with C will not work\
-\
-
+Takes in two Integers and divides one by the other, since dividing two Integer structs with C will not work
 
 
 ### Parameters
@@ -320,9 +294,7 @@ Takes in two Integers and divides one by the other, since dividing two Integer s
 ## <a name="CintMod-22"></a>`CintMod(const Integer a, const Integer b)`
 **Modulus of two Cint Integers**
 
-Takes in two Integers and finds their modulus, since finding the modulo of two Integer structs with C will not work\
-\
-
+Takes in two Integers and finds their modulus, since finding the modulo of two Integer structs with C will not work
 
 
 ### Parameters
@@ -342,9 +314,7 @@ Takes in two Integers and finds their modulus, since finding the modulo of two I
 ## <a name="CintInc-23"></a>`CintInc(const Integer c)`
 **Increments a Cint Integer**
 
-Takes in an Integer and increments it by 1, since C cannot increment Integer structs\
-\
-
+Takes in an Integer and increments it by 1, since C cannot increment Integer structs
 
 
 ### Parameters
@@ -363,9 +333,7 @@ Takes in an Integer and increments it by 1, since C cannot increment Integer str
 ## <a name="CintDec-24"></a>`CintDec(const Integer c)`
 **Decrements a Cint Integer**
 
-Takes in an Integer and decrements it by 1, since C cannot decrement Integer structs\
-\
-
+Takes in an Integer and decrements it by 1, since C cannot decrement Integer structs
 
 
 ### Parameters

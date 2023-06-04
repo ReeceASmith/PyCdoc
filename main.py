@@ -58,6 +58,7 @@ if (len(c)): # If file exists and has contents
         while (c[l].strip() != "Attributes:" and c[l].strip() != "Parameters:"):
             fDesc += f"{c[l].strip()}\\\n"
             l+=1
+        fDesc = fDesc[:-4]
 
 
         fType = c[l].strip()[:-2]
@@ -103,7 +104,7 @@ if (len(c)): # If file exists and has contents
 
 
         l+=1
-        fTitle = " ".join(c[l].strip()[:-1].split(" ")[1:])
+        fTitle = " ".join(c[l].strip()[:-1].split(" ")[1:]).strip()
 
         out += f"## <a name=\"{functionIds[fi]}\"></a>`{fTitle}`\n"
         out += f"**{fMainDesc}**\n\n{fDesc}\n{fParameters}\n{fRet}\n{fExtra}\n\n"
