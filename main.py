@@ -38,7 +38,7 @@ if (len(c)): # If file exists and has contents
         
         temp = c[l].strip()
         temp = temp.split("\t")
-        functionIds.append(temp[0].replace(" ", "-")+"-"+l)
+        functionIds.append(temp[0].replace(" ", "-")+"-"+str(l))
         out += f"| [{temp[0]}](#{functionIds[-1]}) | {temp[-1]} |\n"
         l+=1
     out += "\n"
@@ -46,7 +46,7 @@ if (len(c)): # If file exists and has contents
 
     # Get functions
     fi=0 # Function Id Index
-    while (l<len(c)):
+    while (l<len(c) and "/*" in c[l:]):
         while (c[l].strip() != "/*"): l+=1
         l+=1
         fMainDesc = f"<a name=\"{functionIds[fi]}\"></a>{c[l].strip()}" # Function descriptor (the 'title')
