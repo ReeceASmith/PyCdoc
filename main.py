@@ -87,7 +87,7 @@ if (len(c)): # If file exists and has contents
 
 
 
-        fExtra = "\n#### Extra Info:\n"
+        fExtra = "\n### Extra Info:\n"
         if (c[l].strip() != "*/"):
             if (c[l].strip() != ""):
                 fExtra += c[l].strip() + "\\\n"
@@ -97,8 +97,8 @@ if (len(c)): # If file exists and has contents
             fExtra += c[l].strip() + "\\\n"
             l+=1
 
-        if (fExtra[:-2] == "\n#### Extra Info:"):
-            fExtra = "\n#### Extra Info:\n**None**\n\n"
+        if (fExtra == "\n### Extra Info:\n"):
+            fExtra = "\n### Extra Info:\n**None**\n\n"
         else:
             fExtra = fExtra[:-2] + "\n\n"
 
@@ -107,7 +107,8 @@ if (len(c)): # If file exists and has contents
         fTitle = " ".join(c[l].strip()[:-1].split(" ")[1:]).strip()
 
         out += f"## <a name=\"{functionIds[fi]}\"></a>`{fTitle}`\n"
-        out += f"**{fMainDesc}**\n\n{fDesc}\n{fParameters}\n{fRet}\n{fExtra}\n\n"
+        out += f"### {fMainDesc}\n\n{fDesc}\n{fParameters}\n{fRet}\n{fExtra}\n\n"
+        out += "---\n"
 
 
 
